@@ -9,7 +9,7 @@ void OnTick() {
 
    string cookie=NULL, headers;
    char   post[], result[];
-   string format = "http://localhost:8080/ontick?symbol=%s&time=%s&open=%f&high=%f&low=%f&close=%f";
+   string format = "http://localhost:8080/on?symbol=%s&time=%s&open=%f&high=%f&low=%f&close=%f";
    string request = StringFormat(format, Symbol(), TimeToStr(Time[0] , TIME_DATE | TIME_SECONDS), Open[0], High[0], Low[0], Close[0]);
 
    int response = WebRequest("GET", request, cookie, NULL, 500, post, 0, result, headers);
